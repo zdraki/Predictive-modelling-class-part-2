@@ -16,6 +16,24 @@
 
 
 %%% BEGIN DOCUMENT
+
+\documentclass[12pt]{amsart}
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\geometry{a4paper} % or letter or a5paper or ... etc
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+ 
+
+
+
+\title{}
+\author{}
+\date{}
+
+
+%%% BEGIN DOCUMENT
 \begin{document}
 \newpage
 
@@ -56,7 +74,11 @@ The probability $P$ of some event $A$, denoted $P(A)$, is usually defined such t
 \item $P($not $A)=P(A^{\mathrm{c}})=1-P(A)$ ;  either $A$ happens or not
 \item $P(A$ or $B)=P(A\cup B)=P(A)+P(B)-P(A\cap B)$\\
 {\bf If} events $A$ and $B$ are mutually exclusive; (the realization of $A$ prevents the realization of $B$ and vice versa), we have that $P(A$ or $B)=P(A\cup B)=P(A)+P(B)$ since $P(A\cap B)=0$
-\end{enumerate}
+\end{enumerate}\\
+
+Note: Above, I used a slightly different notation than the one used in class
+
+
 
 
 
@@ -74,11 +96,11 @@ We can talk about Conditional  and Joint Probability.\\
 
 {\bf Conditional probability of $A$ given $B$} is defined as the ratio\\
 $P(A|B)=\displaystyle\frac{P(A\cap B)}{P(B)}=\displaystyle\frac{P(AB)}{P(B)}$ $(1)$.\\
-Somewhat intuitively in order want to find out how often $A$ occurs, given that we know $B$ has occurred, we need to find the occurrences of $A$ and divide by the total number of possibilities. Since $B$ occurred, the occurrences of $A$ are exactly those situations in which both $A$ and $B$ occurred ($A\cap B$) , and since we're assuming $B$ occurred, the total number of possibilities are reduced to only those where $(1)$ holds since the total number of possibilities in the expressions  $P(AB)$, $P(B)$ cancel.\\
+Somewhat intuitively in order to find out how often $A$ occurs, given that we know $B$ has occurred, we need to find the occurrences of $A$ and divide by the total number of possibilities. Since $B$ occurred, the occurrences of $A$ are exactly those situations in which both $A$ and $B$ occurred ($A\cap B$) , and since we're assuming $B$ occurred, the total number of possibilities are reduced to only those where $(1)$ holds since the total number of possibilities in the expressions  $P(AB)$, $P(B)$ cancel.\\
 
 % Enhance it with prof Scott's comments
 Note: Conditional probability is {\bf not symmetric}, meaning that  ${\bf P(A|B)\neq P(B|A)}$. This can also be illustrated by the following example.
-If $A$ is the event of a person training hard and $B$ the event of a person being an MBA player. The common sense agrees in that given event $B$; a person being an MBA player, the probability that this person is training hard $P(A|B)$ is almost one, whereas given event $A$ a person practicing hard, the probability that this person is an MBA player $P(B|A)$ is basically zero.\\
+If $A$ is the event of a person training hard and $B$ the event of a person being an MBA player. The common sense agrees in that given event $B$; a person being an NBA player, the probability that this person is training hard $P(A|B)$ is almost one, whereas given event $A$ a person practicing hard, the probability that this person is an NBA player $P(B|A)$ is basically zero.\\
 {\bf Joint probability} $P(AB)$ of $A$ and $B$ is the probability of both events happening.\\
 For example in the probability tree above, the probability of a woman developing breast cancer and surviving is $\frac{12}{200}$ (or $\frac{15}{200}\cdot \frac{12}{15}$).\\
 
@@ -110,7 +132,7 @@ Let's go over quickly this example in order to remember the joint distributions 
  
  We can convert the data listed in figure 2 to a probability distribution by making the percentages to sum to 1.\\
  Then we will get the following table illustrated in figure 3 above.\\
- These patterns runfortunately were of the planes that actually returned;not of the planes that were taken down.We can see Wald's
+ These patterns unfortunately were of the planes that actually returned; not of the planes that were taken down. We can see Wald's
  reconstruction of the joint distribution. Wald argued that the Navy was using the wrong probability and he was right!
   \begin{figure}[t]
 \includegraphics[width=7cm, height=4cm]{image2}
@@ -157,7 +179,7 @@ Be careful, a lot of fallacies can be boiled down to misunderstandings of this n
 Let $E$: the event that an American works for Enron and $L$: the event that an American works for Lehman Brothers.\\
 What is the (joint) probability that an American chosen at random works for both firms? In other words, what is $P(EL)$?\\
 If we begin assuming that these two events $E,L$ are independent we might come up with the number $P(EL)=P(E)\cdot P(L)\approx\frac{20,000}{200,000,000}\cdot\frac{26,000}{200,000,000}\approx 1.3\times 10^{-8}$. This result is very alarming. There can't be true that there are only 2 people in the entire country who work in both firms. What led us to this false conclusion was our initial hypothesis about the independence of $L,E$. If they are not assumed independent (and indeed they are not independent of each other, they are part of the same industry), the correct calculation will come from the formula: \\
-$P(EL)=P(E)\cdot P(L|E)=\frac{20,000}{200,000,000}\cdot \frac{26,000}{2,000}\approx 1.3\times 10^{-6}$ which yields as an answer one american in a million, which makes much more sense. \\
+$P(EL)=P(E)\cdot P(L|E)=\frac{20,000}{200,000,000}\cdot \frac{26,000}{2,000}\approx 1.3\times 10^{-6}$ which yields as an answer one American in a million, which makes much more sense. \\
 
 Bottom line, we must be careful when making assumptions about independence. \\
 
@@ -192,4 +214,5 @@ Bottom line, we must be careful when making assumptions about independence. \\
 
 
 \end{document}
+
 
